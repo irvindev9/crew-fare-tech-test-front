@@ -3,16 +3,11 @@ import { defineStore } from 'pinia'
 const useGeneralStore = defineStore({
   id: 'general',
   state: () => ({
-    count: 0,
+    countryNames: [],
   }),
-  getters: {
-    doubleCount() {
-      return this.count * 2
-    },
-  },
   actions: {
-    increment() {
-      this.count++
+    setCountries($countries) {
+      this.countryNames = $countries;
     },
   },
 })
